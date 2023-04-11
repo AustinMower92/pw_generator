@@ -20,7 +20,7 @@ def generate_pwd(pw_length, alphabet, special_chars, digits):
             pwd_strong = True                   
     return pwd
 
-def create_pw(pw_length):
+def get_pwd(pw_length):
     digits = string.digits
     special_chars = string.punctuation
     letters = string.ascii_letters
@@ -30,7 +30,7 @@ def create_pw(pw_length):
     pwd = generate_pwd(pw_length, alphabet, special_chars, digits)
     return pwd
 
-def run_pw_gen():
+def run_pwd_gen():
    print('Welcome to Password Generator!')
    # data type validation | program can only accept integers
    try:
@@ -40,7 +40,7 @@ def run_pw_gen():
    else:
       # more validation | pwd_length must be 8-25
       if pwd_length < 26 and pwd_length > 7:
-         pwd = create_pw(pwd_length)
+         pwd = get_pwd(pwd_length)
          print(f'Your New Password is: {pwd}\nPassword Length: {len(pwd)}')
          # copy password to user clipboard
          pyperclip.copy(pwd)
@@ -48,4 +48,4 @@ def run_pw_gen():
       else:
          print('Invalid entry. Please enter an integer between 8 and 25.')
 
-run_pw_gen()
+run_pwd_gen()
