@@ -38,7 +38,7 @@ def run_pw_gen():
    except Exception:
       print('Invalid entry. Please enter an integer between 8 and 25.')
    else:
-      # more validation | pwd_length must be 1-25
+      # more validation | pwd_length must be 8-25
       if pwd_length < 26 and pwd_length > 7:
          pwd = create_pw(pwd_length)
          print(f'Your New Password is: {pwd}\nPassword Length: {len(pwd)}')
