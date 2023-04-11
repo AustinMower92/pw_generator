@@ -8,7 +8,7 @@ def generate_pwd(pw_length, alphabet, special_chars, digits):
     pwd_strong = False
     while not pwd_strong:
         pwd = ''
-        for x in range(pw_length):
+        for _ in range(pw_length):
             # select random item from alphabet | append to pwd string
             pwd += ''.join(secrets.choice(alphabet))
         # check pwd for special characters and numbers 
