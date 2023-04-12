@@ -21,11 +21,6 @@ def generate_pwd(pw_length, alphabet, special_chars, digits):
             pwd_strong = True                   
     return pwd
 
-def choice_to_quit():
-   choice = str(input(''))
-
-   return
-
 def validate_user_input():
    # while loop provides auto restart for program upon invalid entry
    while True:
