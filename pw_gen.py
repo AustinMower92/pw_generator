@@ -53,7 +53,6 @@ def run_pwd_gen():
    print('Welcome to Password Generator!')
    print('If you would like to quit press Q.')
    # data type validation | program can only accept integers
-
    pwd_length = validate_user_input()
    pwd = get_pwd(pwd_length)
    print(f'Your New Password is: {pwd}\nPassword Length: {len(pwd)}')
