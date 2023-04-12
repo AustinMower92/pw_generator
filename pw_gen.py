@@ -1,6 +1,7 @@
 import secrets
 import string
 import pyperclip
+import sys
 
 # code imported from local sandbox
 
@@ -20,21 +21,28 @@ def generate_pwd(pw_length, alphabet, special_chars, digits):
             pwd_strong = True                   
     return pwd
 
+def choice_to_quit():
+   choice = str(input(''))
+
+   return
+
 def validate_user_input():
    # while loop provides auto restart for program upon invalid entry
    while True:
+      user_input = input('Please enter your desired password length (8-25 / integers only) then press enter: ')
+      if user_input.lower() == 'q':
+         sys.exit(0)
       try:
-         pwd_length = int(input('Please enter your desired password length (8-25 / integers only), then press enter: '))
+         pwd_length = int(user_input)
       except Exception:
          print('Invalid entry. Please enter an integer between 8 and 25.')
          continue
+      # more validation | pwd_length must be 8-25
+      if pwd_length < 26 and pwd_length > 7:
+         return pwd_length
       else:
-         # more validation | pwd_length must be 8-25
-         if pwd_length < 26 and pwd_length > 7:
-            return pwd_length
-         else:
-            print('Invalid entry. Please enter an integer between 8 and 25.')
-            continue   
+         print('Invalid entry. Please enter an integer between 8 and 25.')
+         continue   
 
 def get_pwd(pw_length):
     digits = string.digits
@@ -48,6 +56,7 @@ def get_pwd(pw_length):
 
 def run_pwd_gen():
    print('Welcome to Password Generator!')
+   print('If you would like to quit press Q.')
    # data type validation | program can only accept integers
 
    pwd_length = validate_user_input()
