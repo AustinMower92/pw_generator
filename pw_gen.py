@@ -6,6 +6,7 @@ import sys
 # code imported from local sandbox
 
 def generate_pwd(pw_length, alphabet, special_chars, digits):
+    #TODO: add check for if pw has been generated before
     pwd_strong = False
     while not pwd_strong:
         pwd = ''
@@ -60,4 +61,5 @@ def run_pwd_gen():
    pyperclip.copy(pwd)
    print('New password copied to clipboard!')
 
-run_pwd_gen()
+if __name__ == '__main__':
+   run_pwd_gen()
